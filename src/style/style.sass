@@ -35,11 +35,13 @@ body
         transition: background 200ms
         &:focus
             background: #ffffff
-            ~ .searchbox__svg
+            ~ .searchbox__search-svg
                 background: #ffffff
             ~ .searchbox__per-page
                 background: #ffffff
-    &__svg
+            ~ .searchbox__select-svg
+                background: #ffffff
+    &__search-svg
         order: 0
         display: flex
         flex-direction: column
@@ -53,15 +55,36 @@ body
             margin: 0 8px
     &__per-page
         order: 2
-        padding: 10px
+        padding: 0 35px 0px 20px
         font-size: 20px
+        background-color: #f1f1f1
         border: none
         border-left: 1px solid #484D51
-        background: #f1f1f1
         transition: background 200ms
+        cursor: pointer
         outline: none
-    &__btn
+        appearance: none
+        -webkit-appearance: none
+        -moz-appearance: none
+    &__select-svg
         order: 3
+        position: relative
+        > div
+            position: absolute
+            right: 12px
+            bottom: 23px
+            display: flex
+            flex-direction: column
+            justify-content: center
+            background: transparent
+            pointer-events: none
+            transition: background 200ms 
+            .icon
+                width: 15px 
+                height: 25px
+                fill: black
+    &__btn
+        order: 4
         width: 150px
         font-size: 22px
         outline: none
@@ -86,6 +109,16 @@ body
     height: calc(100vh - 160px)
     padding: 0 10px
     overflow-y: scroll
+    &::-webkit-scrollbar 
+      border-radius: 12px
+      width: 12px
+      background: #ccc
+      opacity: 0.2
+    &::-webkit-scrollbar-thumb 
+      border-radius: 12px
+      background: #999999
+      &:hover 
+        background: #777777
     .results
         display: flex
         flex-wrap: wrap
@@ -111,6 +144,7 @@ body
             font-size: 22px
             outline: none
             border: none
+            border-radius: 9px
             background: rgba(61, 90, 241, 1)
             color: #fff
             transition: background 200ms
@@ -146,19 +180,19 @@ body
         font-size: 30px
 
 
-@media screen and (max-width: 1100px)
+@media screen and (max-width: 1200px)
     .results__container
         .results
             .result
                 max-width: 31%
 
-@media screen and (max-width: 700px)
+@media screen and (max-width: 900px)
     .results__container
         .results
             .result
                 max-width: 48%
 
-@media screen and (max-width: 570px)
+@media screen and (max-width: 670px)
     .results__container
         .results
             .result
