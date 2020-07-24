@@ -18,6 +18,22 @@ const displaySearchInfo = data => {
     document.querySelector(elements.searchInfo).innerHTML = markup
 }
 
+const displayNavigationBtn = data => {
+
+    document.querySelector(elements.previousPage).style.visibility = "visible";
+    document.querySelector(elements.nextPage).style.visibility = "visible";
+    document.querySelector(elements.navigation).style.visibility = "visible";
+
+    if(parseInt(data.total) <= data.perPage){
+        document.querySelector(elements.navigation).style.visibility = "hidden";
+    } 
+
+    if(data.page <= 1){
+        document.querySelector(elements.previousPage).style.visibility = "hidden";
+    } else if(data.page === data.pages) {
+        document.querySelector(elements.nextPage).style.visibility = "hidden";
+    }
+}
 const initialDisplayResults = () =>{
     document.querySelector(elements.resultsContainer).style.display = "flex";
     document.querySelector(elements.results).innerHTML = "";
@@ -30,6 +46,8 @@ export const displayResults = data => {
     initialDisplayResults();
 
     displaySearchInfo(data);
+
+    displayNavigationBtn(data)
 
     for (const photo of data.photos){
         const markup = `

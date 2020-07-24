@@ -15,7 +15,8 @@
 
         <div class="searchbox">
             <input class="searchbox__input" placeholder="Search any image..." type="text">
-            <div class="searchbox__svg">
+            
+            <div class="searchbox__search-svg">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8"><path d="M3.5 0C1.57 0 0 1.57 0 3.5S1.57 7 3.5 7c.59 0 1.17-.14 1.66-.41a1 1 0 0 0 .13.13l1 1a1.02 1.02 0 1 0 1.44-1.44l-1-1a1 1 0 0 0-.16-.13c.27-.49.44-1.06.44-1.66c0-1.93-1.57-3.5-3.5-3.5zm0 1C4.89 1 6 2.11 6 3.5c0 .66-.24 1.27-.66 1.72l-.03.03a1 1 0 0 0-.13.13c-.44.4-1.04.63-1.69.63c-1.39 0-2.5-1.11-2.5-2.5s1.11-2.5 2.5-2.5z"/></svg>
             </div>
 
@@ -25,7 +26,16 @@
                 <option value="75">75</option>
                 <option value="100">100</option>
                 <option value="200">200</option>
+                <option value="500">500</option>
             </select>
+
+            <div class="searchbox__select-svg">
+                <div>
+                    <svg focusable="false" class="icon" viewBox="0 0 320 512">
+                        <path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"></path>
+                    </svg>
+                </div>
+            </div>
 
             <button class="searchbox__btn">Search</button>
         </div>

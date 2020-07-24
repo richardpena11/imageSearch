@@ -61,10 +61,8 @@ const changePage = e => {
     }
 
     if(page > 0){
-        search(newSearch.query, page)
+        search(newSearch.query, page, newSearch.perPage)
     }
-    
-    console.log(newSearch);
 }
 
 const changePerPage = () => {
