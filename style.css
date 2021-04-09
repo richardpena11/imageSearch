@@ -1,0 +1,259 @@
+/* ------- General Styles ------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --height_header: 8rem;
+}
+
+html {
+  height: 100%;
+  font-size: 10px;
+}
+
+body {
+  padding-top: var(--height_header);
+  height: calc(100%);
+  background-color: #5D45BD;
+}
+
+/* ------- Header ------- */
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: var(--height_header);
+  padding: 1rem 4rem;
+  background-color: #724FFF;
+}
+
+/* Brand */
+
+.header__brand h1 a{
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #FFFFFF;
+}
+
+/* Search */
+
+.header__search{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 2.5rem;
+}
+
+.header__search__searchbox{
+  width: 100%;
+  height: 100%;
+}
+
+.header__search__searchbox::after{
+  position: absolute;
+  left: 0rem;
+  bottom: 0rem;
+  width: 0;
+  height: .3rem;
+  content: "";
+  transition: width .5s;
+  background-color: #ffffff;
+}
+
+.header__search:focus .header__search__searchbox::after, 
+.header__search:hover .header__search__searchbox::after{
+  width: 100%;
+}
+
+.header__search__searchbox__input{
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+  padding: 0rem 1.5rem;
+  background: transparent;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+.header__search__searchbox__input::placeholder{
+  opacity: .3;
+  color: #FFFFFF;
+  transition: opacity .5s;
+}
+
+.header__search__searchbox__input--invalid::placeholder{
+  color: #532E29;
+}
+.header__search:hover 
+.header__search__searchbox__input::placeholder{
+  opacity: 1;
+}
+
+.header__search__search_button{
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+/* ------- Content Styles ------- */
+
+/* Containers and title */
+
+.wrapper{
+  width: 95%;
+  max-width: 140rem;
+  height: 100%;
+  margin: calc(10rem) auto 0 auto;
+  padding: 1rem 0;
+  border-radius: 4rem 4rem 0 0;
+  background-color: #FFFFFF;
+}
+
+.results{
+  background-color: #FFFFFF;
+}
+
+.results__title{
+  font-size: 2.4rem;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.results__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+/* Individual pictures */
+
+.results__result{
+  position: relative;
+  top: 20px;
+  height: 200px;
+  margin: 1rem;
+  margin-bottom: .5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.results__result:hover{
+  background-color: #F7E6FF;
+}
+
+.results__result__img{
+  height: 100%;
+}
+
+.results__result__img img{
+  max-width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.results__result__extra {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .8);
+  color: #ffffff;
+  transition: opacity 200ms;
+}
+
+.results__result__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0rem;
+  padding: 0rem 1rem;
+  font-size: 1.2rem;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .8);
+  color: #ffffff;
+  transition: opacity 200ms;
+}
+
+.results__result:hover .results__result__info,
+.results__result:hover .results__result__extra {
+  opacity: 1;
+}
+
+.results__result__extra span,
+.results__result__info span{
+  padding: .5rem 0;
+}
+
+/* Error */
+
+.results__error{
+  padding: 0 2rem;
+}
+
+.results__error__title{
+  font-weight: 300;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.results__error__title span{
+  font-weight: 600;
+  color: #5D45BD;
+}
+
+.results__error__icon{
+  font-size: 3rem;
+}
+
+.results__error__info{
+  font-weight: 300;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+/* ------- Media Queries ------- */
+
+@media screen and (max-width: 600px) {
+
+  .header {
+    padding: 0 1.5rem;
+  }
+
+  .header__brand h1 a{
+    font-size: 2.3rem;
+  }
+
+  .header__search {
+    padding-left: 0;
+  }
+
+  .header__search__searchbox__input {
+    font-size: 2rem;
+  }
+
+  .header__search__search_button {
+    font-size: 2rem;
+    padding: 1rem .5rem;
+  }
+}
